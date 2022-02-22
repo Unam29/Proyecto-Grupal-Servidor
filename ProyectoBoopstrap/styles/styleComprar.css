@@ -1,0 +1,113 @@
+        /* Aqui defino el tamaño del carusel*/
+        
+        .carousel-inner {
+            height: 400px;
+            margin-top: 10px;
+        }
+        
+        #carouselExampleIndicators {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        
+        .card {
+            margin: 40px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        
+        .mb-4 {
+            border: none;
+            margin-left: 160px;
+            margin-right: 160px;
+            margin-top: 160px;
+            background-color: rgba(255, 255, 255, 0.151);
+        }
+        
+        body {
+            background-image: url(../img/fondo2.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Alegreya Sans SC';
+        }
+        
+        .form-group {
+            background-color: rgba(255, 255, 255, 0.486);
+        }
+        
+        .nav-link:hover {
+            animation-name: animacionTexto;
+            animation-duration: 2s;
+        }
+        
+        .btn-primary:hover {
+            animation-name: animacionTexto;
+            animation-duration: 2s;
+        }
+        /*Tamaño que ocupa el navbar*/
+        
+        .navbar {
+            width: 100%;
+        }
+        /*Tamaño letra de los enlaces del navbar*/
+        
+        .navbar a {
+            font-size: 20px;
+        }
+        /*Animacion del texto*/
+        
+        @keyframes animacionTexto {
+            0% {
+                transform: scale(1);
+            }
+            1% {
+                transform: scale(1.1);
+            }
+            2% {
+                transform: scale(1.2);
+            }
+            0% {
+                transform: scale(1);
+            }
+        }
+        
+        .col-12 {
+            margin: 0;
+        }
+        
+        @media (max-width: 1024px) {
+            .card {
+                margin: 10px;
+            }
+            h5 {
+                font-size: 30px;
+            }
+            a {
+                font-size: 25px;
+            }
+        }
+        /* Cuando el maximo de la pantalla es de 400px hago que el carrusel se ponga mas peuqeño */
+        
+        @media (max-width: 400px) {
+            #carouselExampleIndicators {
+                height: 200px;
+            }
+            #volumen {
+                margin-left: 50px;
+            }
+            .card {
+                margin-left: -18px;
+                margin-right: 51px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .d-block {
+                height: 200px;
+            }
+            .mb-4 {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
