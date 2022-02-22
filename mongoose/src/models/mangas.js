@@ -1,9 +1,8 @@
-const { Schema, model } = require('mongoose')
-
-const mongoosePaginate = require('mongoose-paginate-v2');
+const mongoose = require("mongoose");
+let Schema = mongoose.Schema;
 
 const mangasSchema = new Schema({
-    "_id": {
+    "id": {
         "type": "Number"
     },
     "titulo": {
@@ -19,7 +18,6 @@ const mangasSchema = new Schema({
         "type": "Number"
     }
 });
+let Manga = mongoose.model("manga", mangasSchema);
 
-mangasSchema.plugin(mongoosePaginate);
-
-module.exports = model('mangas', mangasSchema);
+module.exports = Manga;

@@ -1,10 +1,11 @@
 const express = require('express');
 
-const { pagos } = require('../controllers/pagos');
+const { getPago,añadirPago } = require('../controllers/pagos');
 
 const router = express.Router();
 
-router.get('/', pagos);
+router.get('/', getPago);
 
+router.post('/', añadirPago);
 
 module.exports = router;

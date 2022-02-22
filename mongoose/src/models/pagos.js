@@ -1,6 +1,6 @@
-const { Schema, model } = require('mongoose')
+const mongoose = require("mongoose");
+let Schema = mongoose.Schema;
 
-const mongoosePaginate = require('mongoose-paginate-v2');
 
 const pagosSchema = new Schema({
     "_id": {
@@ -16,7 +16,6 @@ const pagosSchema = new Schema({
         "type": "Number"
     }
 });
+let Pago = mongoose.model("pago", pagosSchema);
 
-pagosSchema.plugin(mongoosePaginate);
-
-module.exports = model('usuarios', pagosSchema);
+module.exports = Pago;

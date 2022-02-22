@@ -14,3 +14,8 @@ async function añadirUsuario(req, res) {
     res.send(saveUsuario);
   
   }
+  module.exports = {
+    getUsuario,
+    añadirUsuario
+
+}
