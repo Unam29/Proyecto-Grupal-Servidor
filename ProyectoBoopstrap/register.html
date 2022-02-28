@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+	<link rel="stylesheet" href="./styles/register.css">
+	
+
+</head>  
+<body>
+ <form class="formulario">
+    
+    <h1>Registrarse</h1>
+     <div class="contenedor">
+     
+     <div class="input-contenedor">
+         <i class="fas fa-user icon"></i>
+         <input type="text" id="nombre" name="nombre" placeholder="Nombre" pattern="^(\w\w+)$" required title="Formato: Nombre">
+         
+         </div>
+
+         <div class="input-contenedor">
+         <i class="fas fa-user icon"></i>
+         <input type="text" id="apellido" name="apellidos" placeholder="Apellidos" pattern="^(\w+)\s(\w+)$" required title="Formato:Apellido1 + Apellido2">
+         
+         </div>
+         
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" size="30" placeholder="Correo Electronico" required title="Correo no válido">
+         
+         </div>
+
+
+         <div class="input-contenedor">
+            <i class="fas fa-key icon"></i>
+             <input type="password" id="password" pattern=".{8,}" placeholder="Contraseña" accesskey="Contraseña" required title="8 caracteres como mínimo">
+        </div>
+
+         <input type="submit" value="Solicitar Acceso" class="button">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿Ya tienes una cuenta? <a class="link" routerLink="/login">Iniciar Sesion</a></p>
+         <p>v1.0.0</p>
+         </div>
+    </form>
+</body>
+</html>

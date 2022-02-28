@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Contacto</title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+	<link rel="stylesheet" href="./styles/contact.css">
+	
+
+</head>  
+<body>
+    <form action="mailto:NingeniaApp.Contacto@gmail.com" method="post" enctype="text/plain" class="formulario">
+    
+    <h1>Contacto</h1>
+     <div class="contenedor">
+        
+        <div class="input-contenedor">
+            <i class="fas fa-user-alt icon"></i>
+            <input type="text" id="nombre" name="nombre y apellidos" pattern="^(\w\w+)\s(\w+)\s(\w+)$" placeholder="Nombre y Apellidos" required title="Formato: Nombre + Apellido1 + Apellido2">
+           </div> 
+
+        <div class="input-contenedor">
+         <i class="fas fa-building icon"></i>
+         <input type="text" id="empresa" name="empresa" pattern="[a-zA-Z]+" placeholder="Empresa" required title="Solo se admiten letras">
+        </div> 
+
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" size="30" placeholder="Correo Electronico" required title="Correo no válido">
+         
+         </div>
+
+         <div class="input-contenedor">
+            <i class="fas fa-phone icon"></i>
+            <input type="tel" id="telefono" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" placeholder="Teléfono" required title="Teléfono no válido">
+            
+            </div>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-pencil-alt icon"></i>
+         <input type="text" id="motivo" name="motivo" placeholder="Motivo del contacto" required title="Motivo no válido">
+         
+         </div>
+         <input type="submit" value="Enviar" class="button">
+         <p>Gracias por su interés.</p>
+         <p>¿Quieres volver al inicio? <a class="link" routerLink="/login">Iniciar Sesion </a></p>
+         <p>v1.0.0</p>
+     </div>
+    </form>
+</body>
+</html>
