@@ -1,8 +1,23 @@
-const express = require("express");
 
-const { port } = require("./config");
-const loaders = require("./loaders");
-const server = express();
+const routes = require('./routes')
+const express = require("express")
+const mongoose = require("mongoose") // new
+const { dbUrl } = require("./config")
 
-loaders.init(server);
-server.listen(port, () => {});
+
+
+// Connect to MongoDB database
+mongoose
+	.connect(dbUrl)
+	.then(() => {
+		const app = express()
+        app.use(express.json());
+        app.use(express.urlencoded({extended: true}));
+        app.use("/tiendaMangas",routes);
+
+
+
+		app.listen(3000, () => {
+			console.log("Server has started!")
+		})
+	})

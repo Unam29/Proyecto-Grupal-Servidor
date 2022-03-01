@@ -24,7 +24,7 @@ const mangasSchema = new Schema({
         "type": "Number"
     }
 });
-let Manga = mongoose.model("manga", mangasSchema);
+const manga = mongoose.model("Manga", mangasSchema);
 
 
-module.exports = Manga;
+module.exports = manga;
