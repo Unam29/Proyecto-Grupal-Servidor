@@ -1,6 +1,8 @@
 const Manga = require('../models/mangas');
 
 
+
+
 async function getManga(req, res) {
   const limit = parseInt(req.query.limit, 10) || 3
      manga = await Manga(limit)
