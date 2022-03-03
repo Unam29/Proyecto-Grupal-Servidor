@@ -3,12 +3,35 @@ const Manga = require('../models/mangas');
 
 
 async function getManga(req, res) {
-let mangas = await Manga.find({});
 
+  const { pagina = 1, limit = 10 } = req.query;
+  
+  try {
+    // execute query with pagina and limit values
+    let mangas = await Manga.find({})
+  
+    .limit(limit * 1)
+    .skip((pagina - 1) * limit)
+    .exec();
+
+  // Obtener el total de documentos de la coleccion Mangas 
+  const count = await Manga.countDocuments();
+     
 console.log(mangas)
-res.send(mangas);
+// res.send(mangas);
 console.log('Hola mundo')
+
+  //devolver el response con los mangas,paginas totales y actuales
+  res.json({
+    mangas,
+    paginasTotales: Math.ceil(count / limit),
+    paginaActual: pagina
+  });
+} catch (err) {
+  console.error(err.message);
 }
+};
+
 
 
 
@@ -32,6 +55,4 @@ async function agregarManga(req, res) {
   module.exports = {
     getManga,
     agregarManga
-
-
 }

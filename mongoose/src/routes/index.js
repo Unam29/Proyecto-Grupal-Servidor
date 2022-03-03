@@ -2,7 +2,7 @@ const express = require('express');
 
 const { getManga,agregarManga } = require('../controllers/mangas');
 const { getPago,añadirPago } = require('../controllers/pagos');
-const { getUsuario,añadirUsuario } = require('../controllers/usuarios');
+const { getUsuario,agregarUsuario } = require('../controllers/usuarios');
 
 
 
@@ -16,6 +16,6 @@ router.get('/pagos', getPago);
 router.post('/añadirPago', añadirPago);
 
 router.get('/usuarios', getUsuario);
-router.post('/añadirUsuario', añadirUsuario);
+router.post('/registrarse', agregarUsuario);
 
 module.exports = router;

@@ -3,20 +3,20 @@ let Schema = mongoose.Schema;
 
 
 const usuariosSchema = new Schema({
-    "_id": {
+    "usuarioId": {
         "type": "Number"
     },
-    "nombre": {
+    "usuarioNombre": {
         "type": "String"
     },
-    "contra": {
+    "usuarioContra": {
         "type": "String"
     },
-    "email": {
+    "usuarioEmail": {
         "type": "String"
     }
 });
 
-let Usuario = mongoose.model("usuario", usuariosSchema);
+let usuario = mongoose.model("Usuario", usuariosSchema);
 
-module.exports = Usuario;
+module.exports = usuario;
