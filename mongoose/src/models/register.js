@@ -9,7 +9,7 @@ const usuariosSchema = new Schema({
     "nombre": {
         "type": "String"
     },
-    "contra": {
+    "password": {
         "type": "String"
     },
     "email": {

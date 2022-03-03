@@ -2,22 +2,29 @@ const mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
 const mangasSchema = new Schema({
-    "id": {
+    "mangaId": {
         "type": "Number"
     },
-    "titulo": {
+    "mangaName": {
         "type": "String"
     },
-    "categoria": {
+    "mangaVolumen": {
         "type": "String"
     },
-    "descripcion": {
+    "mangaDescription": {
         "type": "String"
     },
-    "precio": {
+    "mangaDemography": {
+        "type": "String"
+    },
+    "mangaGender": {
+        "type": "String"
+    },
+    "mangaPrecio": {
         "type": "Number"
     }
 });
-let Manga = mongoose.model("manga", mangasSchema);
+const manga = mongoose.model("Manga", mangasSchema);
 
-module.exports = Manga;
+
+module.exports = manga;

@@ -1,21 +1,26 @@
 const express = require('express');
 
-const { getManga,añadirManga } = require('../controllers/mangas');
-const { getPago,añadirPago } = require('../controllers/pagos');
-const { getUsuario,añadirUsuario } = require('../controllers/usuarios');
-
-
-
 const router = express.Router();
 
+router.get('/', (req, res, next)=>{
+    res.render('register');
+});
 
-router.get('/mangas', getManga);
-router.post('/añadirManga', añadirManga);
+router.get('/register', (req, res, next)=>{
+    res.render('register');
+});
 
-router.get('/pagos', getPago);
-router.post('/añadirPago', añadirPago);
+router.post('/register', (req, res, next)=>{
+    console.log(req.body);
+    res.send('Datos de Registro Enviados al Servidor');
+});
 
-router.get('/usuarios', getUsuario);
-router.post('/añadirUsuario', añadirUsuario);
+router.get('/login', (req, res, next)=>{
+    res.render('login');
+});
+
+router.post('/login', (req, res, next)=>{
+    res.render('login');
+});
 
 module.exports = router;
