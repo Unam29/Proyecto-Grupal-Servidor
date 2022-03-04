@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto Grupal</title>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <% if (!user) { %>
+  <a href="/signin">Iniciar Sesión</a>
+  <a href="/signup">Registrarse</a>
+  <% } else { %>
+  <a href="/logout">Cerrar Sesión</a>
+  <a href="/profile">Perfil</a>
+  <a href="/mangas">Mangas</a>
+  <a href="/cesta">Cesta</a>
+  <% } %>
+
+  <%if (signinMessage) {%>
+    <p><%= signinMessage %></p>
+  <% } %>
+  <%if (signupMessage) {%>
+    <p><%= signupMessage %></p>
+  <% } %>
+
+  <%- body %>
+</body>
+</html>
