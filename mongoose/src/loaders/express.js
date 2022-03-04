@@ -1,7 +1,7 @@
 const express = require('express');
 
 
-const router = require('../routes');
+const router = require(__dirname+'');
 
 module.exports = (server) => {  
     server.use(router);

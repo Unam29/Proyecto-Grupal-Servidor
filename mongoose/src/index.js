@@ -19,6 +19,8 @@ mongoose
         app.use(express.urlencoded({extended: true}));
         app.use("/tiendaMangas",routes);
 
+		
+
 		//Middlewares
 		app.use(morgan('dev'));
 		app.use(express.urlencoded({entended: false}));
@@ -27,7 +29,7 @@ mongoose
 		app.use('/', require('./routes/index'))
 
 		//Css
-		app.use(express.static(__dirname + './views/'));
+		app.use(express.static('public'));
 
 		//Iniciar Server
 		app.listen(3000, () => {
