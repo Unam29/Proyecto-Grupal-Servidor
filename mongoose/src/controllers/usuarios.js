@@ -1,5 +1,7 @@
 const Usuario = require('../models/usuarios');
 
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 
 async function getUsuario(req, res) {
@@ -10,23 +12,44 @@ async function getUsuario(req, res) {
   console.log('Hola mundo')
   }
   
-  
-  
+  async function login(req, res) {
+   let usuario = await Usuario.findOne({ usuarioEmail: req.body.usuarioEmail }).exec();
+   console.log(usuario.usuarioEmail)
+   console.log(usuario.usuarioContra)
+ 
+// Verifica que exista un usuario con el mail escrita por el usuario.
+  if (!usuario) {
+   res.send("Usuario no existe");
+  }else{
+    res.send("UsuarioLogueado");
+  }
+// Valida que la contraseña escrita por el usuario, sea la almacenada en la db
+  if (! bcrypt.compareSync(req.body.usuarioContra, usuario.usuarioContra)){
+    res.send("Usuario no existe");
+  }else{
+     res.send("UsuarioLogueado");
+  }
+
+}
+
+
   async function agregarUsuario(req, res) {
     
     const usuario = new Usuario({
       usuarioId: req.body.usuarioId,   
       usuarioNombre: req.body.usuarioNombre,
-      usuarioContra: req.body.usuarioContra,
+      usuarioContra: bcrypt.hashSync(req.body.usuarioContra,10),
       usuarioEmail: req.body.usuarioEmail,
     })
     await usuario.save()
     res.send(usuario)
     console.log(usuario)
-  }
+  } 
+
     
   module.exports = {
     getUsuario,
-    agregarUsuario
+    agregarUsuario,
+    login
 
 }
