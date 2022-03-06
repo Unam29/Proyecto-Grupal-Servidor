@@ -5,6 +5,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const morgan = require('morgan');
+const nodemailer = require('nodemailer');
 
 // initializations
 const app = express();
@@ -35,6 +36,37 @@ app.use((req, res, next) => {
   app.locals.user = req.user;
   console.log(app.locals)
   next();
+});
+
+// Email
+app.post('/send-email', (req,res) => {
+  var transporter = nodemailer.createTransport({
+      host: "smtp.ethereal.email",
+      post: 8080,
+      secure: false,
+      auth:{
+          user: "aurelie.barton43@ethereal.email", /** el usuario y pass generado por Ethereal Email */
+          pass:  "wYdfj5G71T83cvtMxz",
+      },
+  });
+
+  var mailOptions = {
+      from: "Remitente",
+      to: "juanma97sevillano@gmail.com",
+      subject: "Enviado desde asljdhasldjhasjldkhas",
+      text: "Esto es un texto enviado PRUEBA 3"
+  }
+
+  transporter.sendMail(mailOptions, (err, info) => {
+      if(err){
+          res.status(500).send(err.message);
+      }
+      else{
+          console.log("Email ha sido enviado!!! :DDD");
+          res.status(200).json(req.body);
+      }
+  })
+  console.log('Email enviado');
 });
 
 // routes
