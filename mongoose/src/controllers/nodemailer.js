@@ -1,8 +1,6 @@
-const nodemailer = require('nodemailer');
-const express = require('express');
-const app = express();
 
-app.post('/send-email', (req,res) => {
+
+async function enviarEmail(req,res) {
     var transporter = nodemailer.createTransport({
         host: "smtp.ethereal.email",
         post: 8080,
@@ -30,8 +28,7 @@ app.post('/send-email', (req,res) => {
         }
     })
     console.log('Email enviado');
-});
+};
 
-app.listen(3000, () => {
-    console.log('Servidor en -> http://localhost:3000');
-});
+
+module.exports = { enviarEmail };

@@ -3,6 +3,7 @@ const { Router } = require('express');
 const mangas = require('./mangas');
 const pagos = require('./pagos');
 const usuarios = require('./usuarios');
+const mensaje = require('./nodemailer');
 
 const router2 = Router();
 

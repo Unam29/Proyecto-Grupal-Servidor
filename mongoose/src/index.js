@@ -1,9 +1,9 @@
 const express = require("express");
 
-const { port } = require("./config");
-const loaders = require("./loaders");
+/*const { port } = require("./config");
+const loaders = require("./loaders");*/
 
 const server = express();
 
 loaders.init(server);
-server.listen(port, () => {});
+server.listen(3000, () => {});
