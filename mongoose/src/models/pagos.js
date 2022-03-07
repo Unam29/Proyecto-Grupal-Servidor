@@ -3,12 +3,16 @@ let Schema = mongoose.Schema;
 
 
 const pagosSchema = new Schema({
-    "_id": {
+    "idPago": {
         "type": "Number"
     },
-    "_iduser": {
-        "type": "String"
+    "idUser": {
+        "type": "Number"
     },
+    "idManga":{
+        "type": "Number"
+    },  
+    
     "total": {
         "type": "Number"
     },

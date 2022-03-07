@@ -1,7 +1,7 @@
 const express = require('express');
 
 const { getManga,agregarManga } = require('../controllers/mangas');
-const { getPago,añadirPago } = require('../controllers/pagos');
+const { getPago,agregarPago } = require('../controllers/pagos');
 const { getUsuario,agregarUsuario,login } = require('../controllers/usuarios');
 
 
@@ -13,7 +13,7 @@ router.get('/mangas', getManga);
 router.post('/agregarManga', agregarManga);
 
 router.get('/pagos', getPago);
-router.post('/añadirPago', añadirPago);
+router.post('/agregarPago', agregarPago);
 
 router.get('/usuarios', getUsuario);
 router.post('/registrarse', agregarUsuario);

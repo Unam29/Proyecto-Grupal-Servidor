@@ -13,6 +13,7 @@ async function getUsuario(req, res) {
   }
   
   async function login(req, res) {
+    // Busca si el correo indicado esta en la base de datos.
    let usuario = await Usuario.findOne({ usuarioEmail: req.body.usuarioEmail }).exec();
    console.log(usuario.usuarioEmail)
    console.log(usuario.usuarioContra)
