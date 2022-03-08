@@ -1,11 +1,11 @@
-const express = require('express');
+const express = require("express");
 
-const { getManga,agregarManga } = require('../controllers/mangas');
+const { getManga, agregarManga } = require("../controllers/mangas");
 
 const router = express.Router();
 
-router.get('/', getManga);
+router.get("/", getManga);
 
-router.post('/', agregarManga);
+router.post("/", agregarManga);
 
 module.exports = router;
