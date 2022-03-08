@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { getManga, agregarManga } = require("../controllers/mangas");
+const { getManga, agregarManga, eliminarManga, buscarPorDemografia } = require("../controllers/mangas");
 const { getPago, agregarPago } = require("../controllers/pagos");
 const {
   getUsuario,
@@ -11,7 +11,9 @@ const {
 const router = express.Router();
 
 router.get("/mangas", getManga);
+router.get("/mangas/demografia", buscarPorDemografia);
 router.post("/agregarManga", agregarManga);
+router.delete("/eliminarManga",eliminarManga);
 
 router.get("/pagos", getPago);
 router.post("/agregarPago", agregarPago);
