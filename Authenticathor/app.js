@@ -21,7 +21,10 @@ app.post("/api/login", (req , res) => {
             token
         });
     });
-
+/**eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Iml
+ * kIjoxLCJub21icmUiOiJIZW5yeSIsImVtYWlsIjoiaGVucnlAZW1haWwuY29tIn0sImlhdC
+ * I6MTY0Nzk0NzA2OCwiZXhwIjoxNjQ3OTQ3MTAwfQ.REdWa-4jTfzWjHd_r1Vfe6FQ2LKgF
+ * MtNAi8bP9cArF4" */
 });
 
 app.post("/api/posts", verifyToken, (req , res) => {
